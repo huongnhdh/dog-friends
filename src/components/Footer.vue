@@ -1,13 +1,13 @@
 <template>
   <div>
     <ul class="footer-nav">
-      <li class="push">Made with ❤ by Ronnie Villarini</li>
+      <li class="push">Made with ❤ by <a href="https://github.com/huongnhdh">huongnhdh</a></li>
       <li>
-        <a href="https://github.com/Roninii/kitty-friends">GitHub</a>
+        <a href="https://github.com/huongnhdh/dog-friends">GitHub</a>
       </li>
-      <li>
+      <!-- <li>
         <a href="https://twitter.com/_Ronini">Twitter</a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <img :src="cat.url" alt="kitty" class="card-image">
+    <img :src="url" class="card-image"  width="400" height="300" >
     <div>
-      <h2>{{ cat.altText }}</h2>
+      <h2>{{ dog_breed }}</h2>
       <!-- <p>{{ cat.email }}</p> -->
     </div>
   </div>
@@ -12,15 +12,23 @@
 export default {
   name: `Card`,
   props: {
-    cat: {
-      type: Object
+    dog_breed: {
+      type: String
     }
   },
-  // computed: {
-  //   url() {
-  //     // return `https://robohash.org/${this.cat.id}?set=set4`;
-  //   }
-  // }
+  data() {
+    return {
+      url: require('../assets/images/baby-dog.png')
+    };
+  },
+  mounted() {
+    fetch(`https://dog.ceo/api/breed/${this.dog_breed}/images/random`)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data.message)
+        this.url = data.message;
+      });
+  }
 };
 </script>
 

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="card-list" v-if="cats.length">
-      <div v-for="cat in cats" :key="cat.altText" class="card">
-        <Card :cat="cat"/>
+    <div class="card-list" v-if="dog_breeds.length">
+      <div v-for="dog_breed in dogs" :key="dog_breed" class="card">
+        <Card :dog_breed="dog_breed"/>
       </div>
     </div>
     <div v-else class="error">
@@ -21,15 +21,15 @@ export default {
   },
   data() {
     return {
-      catsList: []
+      dog_breeds: []
     };
   },
   computed: {
-    cats() {
-      if (this.catsList.length) {
-        return this.catsList.filter(
-          cat =>
-            cat.altText
+    dogs() {
+      if (this.dog_breeds.length) {
+        return this.dog_breeds.filter(
+          dog =>
+            dog
               .toLowerCase()
               .includes(this.$store.state.searchField.toLowerCase()) === true
         );
@@ -38,10 +38,10 @@ export default {
     }
   },
   created() {
-    fetch(`https://dog.ceo/api/breed/hound/afghan/images/alt`)
+    fetch(`https://dog.ceo/api/breeds/list`)
       .then(res => res.json())
       .then(data => {
-        this.catsList = data.message;
+        this.dog_breeds = data.message;
       });
   }
 };

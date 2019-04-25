@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <h1>Kitty Friends</h1>
+      <h1>Dog Friends</h1>
       <Search/>
     </header>
     <Card-List/>
