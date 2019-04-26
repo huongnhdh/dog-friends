@@ -2,7 +2,7 @@
   <div>
     <div class="card-list" v-if="dog_breeds.length">
       <div v-for="dog_breed in dogs" :key="dog_breed" class="card">
-        <Card :dog_breed="dog_breed"/>
+        <Card :dog_breed="dog_breed" />
       </div>
     </div>
     <div v-else class="error">

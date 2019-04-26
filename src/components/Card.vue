@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <img :src="url" class="card-image"  width="400" height="300" >
+  <div @click="$router.push({ name: 'breed', params: { id: dog_breed } })">
+    <img :src="url" class="card-image">
     <div>
       <h2>{{ dog_breed }}</h2>
       <!-- <p>{{ cat.email }}</p> -->
@@ -25,7 +25,6 @@ export default {
     fetch(`https://dog.ceo/api/breed/${this.dog_breed}/images/random`)
       .then(res => res.json())
       .then(data => {
-        console.log(data.message)
         this.url = data.message;
       });
   }
@@ -34,7 +33,9 @@ export default {
 
 <style scoped>
 .card-image {
+  /* border-radius: 50%; */
   width: 100%;
+  max-width: 640px;
   border-style: none;
 }
 </style>
