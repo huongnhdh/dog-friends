@@ -4,7 +4,7 @@
 set -e
 
 # build
-npm run build
+BASE_URL="dog-friends/" npm run build
 
 # navigate into the build output directory
 cd dist
