@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div class="card-list" v-if="dog_breeds.length">
-      <div v-for="dog_breed in dogs" :key="dog_breed" class="card">
+  <div class="container">
+    <div class="card-list columns" v-if="dog_breeds.length">
+      <div v-for="dog_breed in dogs" :key="dog_breed">
         <Card :dog_breed="dog_breed" />
       </div>
     </div>
@@ -53,22 +53,7 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
 }
-.card {
-  text-align: center;
-  background-color: #9eebcf;
-  border-radius: 1rem;
-  padding: 1rem;
-  margin: 0.5rem;
-  display: inline-block;
-  border-width: 0.25rem;
-  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-  min-width: 200px;
-  transition: transform 0.25s ease-out;
-}
-.card:hover {
-  transform: scale(1.03);
-}
+
 .error {
   font-size: 1.3rem;
   color: #fafafa;
