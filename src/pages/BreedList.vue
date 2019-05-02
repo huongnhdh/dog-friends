@@ -1,27 +1,23 @@
 <template>
   <div >
-    <Header />
+    <!-- <Header /> -->
     <header>
        <Search />
     </header>
     <Card-List/>
-    <Footer/>
+    <!-- <Footer/> -->
   </div>
 </template>
 
 <script>
 import CardList from "../components/CardList.vue";
 import Search from "../components/Search.vue";
-import Footer from "../components/Footer.vue";
-import Header from "../components/Header.vue";
 
 export default {
   name: `BreedList`,
   components: {
     CardList,
     Search,
-    Footer,
-    Header
   }
 };
 </script>

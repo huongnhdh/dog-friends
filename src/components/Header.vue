@@ -1,11 +1,13 @@
 <template>
-   <header >
-      <h1>Dog Friends</h1>
-    </header>
+  <header>
+    <Logo/>
+  </header>
 </template>
 
 <script>
+import Logo from "./Logo.vue";
 export default {
+  components: { Logo },
   name: `Header`
 };
 </script>
