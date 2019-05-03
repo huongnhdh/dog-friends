@@ -1,14 +1,20 @@
 <template>
-  <div>
-    <ul class="footer-nav">
-      <li class="push">Made with ❤ by <a href="https://github.com/huongnhdh">huongnhdh</a></li>
-      <li>
-        <a href="https://github.com/huongnhdh/dog-friends">GitHub</a>
-      </li>
-      <!-- <li>
+  <div class="container">
+    <div class="footer-line" />
+    <div id="footer">
+      <ul class="footer-nav">
+        <li class="push">
+          Made with ❤ by
+          <a href="#">huongnhdh</a>
+        </li>
+        <li>
+          <a href="mailto: huongnhdh@gmail.com">Contact: huongnhdh@gmail.com</a>
+        </li>
+        <!-- <li>
         <a href="https://twitter.com/_Ronini">Twitter</a>
-      </li> -->
-    </ul>
+        </li>-->
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -18,21 +24,30 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.footer-line {
+  // padding-block-end: 5%;
+  margin-block-start: 5%;
+  margin-block-end: 5%;
+  border-block-start-style: solid;
+  border-block-start-width: 1px;
+  border-block-end-color: $primary-text-color;
+  border-block-end-color: $primary-text-color;
+  border-block-end-style: solid;
+  border-block-end-width: 1px;
+  height: 5px;
+}
 .footer-nav {
   display: flex;
   list-style: none;
   justify-content: flex-end;
-  color: #fafafa;
+  // color: #fafafa;
   transition: all 0.5s;
   padding-left: 0.5rem;
+  margin-block-end: 5%;
+  padding-block-end: 5%;
 }
-a {
-  color: #fafafa;
-  text-decoration: none;
-  transition: font-size 0.5s;
-  margin: 1rem;
-}
+
 .push {
   margin-right: auto;
 }

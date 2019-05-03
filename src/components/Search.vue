@@ -1,29 +1,27 @@
 <template>
-  <section id="search" class="children_is_center">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-half hero-body">
-          <div class="field has-addons is-half is-centered">
-            <div class="control">
-              <!-- <input class="input" type="text" placeholder="Find a repository"> -->
-              <input
-                class="input"
-                type="text"
-                placeholder="search dog breed..."
-                v-model="params"
-                @input="updateParams(params)"
-              >
-            </div>
-            <div class="control">
-              <a class="button search-icon">
-                <svg-icon icon-class="search"/>
-              </a>
-            </div>
+  <div class="container">
+    <div class>
+      <div class="column">
+        <div class="field has-addons ">          
+          <div class="control is-expanded">
+            <!-- <input class="input" type="text" placeholder="Find a repository"> -->
+            <input
+              class="input search-box"
+              type="text"
+              placeholder="search dog breed..."
+              v-model="params"
+              @input="updateParams(params)"
+            >
+          </div>
+          <div class="control">
+            <a class="button search-icon">
+              <svg-icon icon-class="search"/>
+            </a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -65,8 +63,15 @@ input:focus {
 }
 
 .search-icon {
-  color: $white;
-  background-color: $orange;
+  color: $orange;
+  background-color: $white;
   border: none;
+}
+.search-box {
+  border-left: 0.3rem solid $orange;
+}
+
+.field {
+   box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 </style>
