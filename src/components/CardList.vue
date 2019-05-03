@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="card-list columns" v-if="dog_breeds.length">
+    <div class="card-list columns is-4" v-if="dog_breeds.length">
       <div v-for="dog_breed in dogs" :key="dog_breed">
         <Card :dog_breed="dog_breed" />
       </div>

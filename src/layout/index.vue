@@ -14,7 +14,6 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-// @charset "utf-8";
-@import "~@/style/my_style.scss";
+<style lang="scss" scoped>
+// @import "~@/style/global.scss";
 </style>

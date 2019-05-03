@@ -7,16 +7,17 @@
         </figure>
       </div>
       <div class="card-content">
-        <p class="title">{{ dog_breed }}</p>
+        <h3 class="title">{{ dog_breed }}</h3>
         <p class="subtitle">{{ dog_breed }}</p>
       </div>
       <footer class="card-footer">
-        <a href="#" class="card-footer-item" @click="$router.push({ name: 'breed', params: { id: dog_breed } })">Detail</a>
+        <a href="#" class="card-footer-item" @click="$router.push({ name: 'breed', params: { id: dog_breed } })">Chi tiết</a>
         <a href="#" class="card-footer-item">
-          <span>
+          <!-- <span>
             Share on
             <a href="#">Facebook</a>
-          </span>
+          </span> -->
+            <svg-icon icon-class="heart" className="icon heartbeat"/>
         </a>
       </footer>
     </div>
@@ -24,6 +25,7 @@
 </template>
 
 <script>
+
 export default {
   name: `Card`,
   props: {
@@ -49,25 +51,34 @@ export default {
 <style scoped lang="scss">
 .card {
   text-align: center;
-  background-color: #9eebcf;
+  color: $primary-text-color !important;
   border-radius: 0.5rem;
   padding: 1rem;
   margin: 0.5rem;
   display: inline-block;
-  border-width: 0.25rem;
   box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-  min-width: 200px;
+  width: 280px;
+  height: 400px;
   transition: transform 0.25s ease-out;
+}
+
+.card-content {
+  color: $primary-text-color !important;
 }
 .card:hover {
   transform: scale(1.03);
 }
 
 .card-footer a {
-  color: #000;
+  // color: #000;
   &:hover{
     font-weight: 2rem;
+  }
+}
+.heartbeat {
+   &:hover{
+     width: 2em;
+   height: 2em;
   }
 }
 </style>

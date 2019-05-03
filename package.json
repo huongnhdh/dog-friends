@@ -25,6 +25,7 @@
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.11.0",
+    "svg-sprite-loader": "^4.1.6",
     "vue-template-compiler": "^2.5.21"
   },
   "eslintConfig": {

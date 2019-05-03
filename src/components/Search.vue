@@ -1,5 +1,29 @@
 <template>
-  <input type="text" placeholder="search dogs..." v-model="params" @input="updateParams(params)">
+  <section id="search" class="children_is_center">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-half hero-body">
+          <div class="field has-addons is-half is-centered">
+            <div class="control">
+              <!-- <input class="input" type="text" placeholder="Find a repository"> -->
+              <input
+                class="input"
+                type="text"
+                placeholder="search dog breed..."
+                v-model="params"
+                @input="updateParams(params)"
+              >
+            </div>
+            <div class="control">
+              <a class="button search-icon">
+                <svg-icon icon-class="search"/>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -18,8 +42,8 @@ export default {
 };
 </script>
 
-<style scoped>
-::placeholder {
+<style lang="scss" scoped>
+/* ::placeholder {
   color: #fafafa;
   opacity: 1;
 }
@@ -35,8 +59,14 @@ input {
   border-bottom: 1px solid #fafafa;
   border-radius: 0;
   color: #fafafa;
-}
+} */
 input:focus {
   outline: none;
+}
+
+.search-icon {
+  color: $white;
+  background-color: $orange;
+  border: none;
 }
 </style>

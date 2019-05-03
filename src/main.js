@@ -5,7 +5,8 @@ import App from "./App.vue";
 import store from "./store";
 import './registerServiceWorker'
 import router from "./router";
-require(`./assets/sass/main.scss`);
+import './style/global.scss';
+import './icons' // icon
 
 
 // Before you create app
