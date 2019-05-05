@@ -31,17 +31,30 @@ export default {
           dog =>
             dog
               .toLowerCase()
-              .includes(this.$store.state.searchField.toLowerCase()) === true
+              .includes(this.$store.state.searchField.toLowerCase().trim()) === true
         );
       }
       return ``;
     }
   },
   created() {
-    fetch(`https://dog.ceo/api/breeds/list`)
+    fetch(`https://dog.ceo/api/breeds/list/all`)
       .then(res => res.json())
       .then(data => {
-        this.dog_breeds = data.message;
+        let dog_breeds = [];
+        const _dog_breeds = data.message;
+        Object.keys(_dog_breeds).forEach(function(key) {
+          if (_dog_breeds[key].length === 0){
+             dog_breeds.push(key)
+          }else{
+            _dog_breeds[key].forEach((k) => {
+              
+             dog_breeds.push(`${k}-${key}`)
+            })
+          }
+        });
+       
+        this.dog_breeds = dog_breeds;
       });
   }
 };

@@ -33,7 +33,7 @@ export default {
   border-block-start-width: 1px;
   border-block-end-color: $primary-text-color;
   border-block-end-color: $primary-text-color;
-  border-block-end-style: solid;
+  border-block-end-style: double;
   border-block-end-width: 1px;
   height: 5px;
 }

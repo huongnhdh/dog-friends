@@ -7,7 +7,18 @@ $beige-light: #D0D1CD;
 $beige-lighter: #EFF0EB;
 $orange: #ff9f43;
 
-$primary-text-color:  #6D214F;
+
+
+$primary-first-color:  $purple;
+$primary-first-light:  $purple;
+$primary-second-color:  $orange;
+$primary-second-color-light: #fff9de;
+$primary-second-color-medium: #e67e22; //carot
+
+
+
+$background-color: $primary-second-color-light;
+$primary-text-color:  $primary-first-color;
 $primary-text-font: 'Imprima', sans-serif;;
 $primary-text-color: $purple;
 $primary-shape-color:  $orange;

@@ -3,8 +3,10 @@ import Vue from "vue";
 import App from "./App.vue";
 
 import store from "./store";
+
 import './registerServiceWorker'
 import router from "./router";
+import i18n from './lang';
 import './style/global.scss';
 import './icons' // icon
 
@@ -19,6 +21,7 @@ Vue.config.devtools = true;
 
 // then had to add in ./store.js as well.
 new Vue({
+  i18n,
   router,
   render: h => h(App),
   store

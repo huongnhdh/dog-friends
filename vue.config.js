@@ -5,7 +5,7 @@ const path = require('path');
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
-
+process.env.RESPONSIVEVOICE_KEY = process.env.NODE_ENV === `production`? 'VjvwBt46' : 'eosxOtN4' ;
 const BASE_URL = process.env.BASE_URL || `/`
 // console.log(BASE_URL);
 module.exports = {
@@ -14,7 +14,9 @@ module.exports = {
   // template: 'public/index.html',
   chainWebpack: config => {
     // clear the existing entry point
+    // const RESPONSIVEVOICE_KEY = process.env.NODE_ENV === `production`? 'VjvwBt46' : 'eosxOtN4' ;
     config.plugin(`html`).tap(args => {
+      args.RESPONSIVEVOICE_KEY = process.env.NODE_ENV === `production`? 'VjvwBt46' : 'eosxOtN4' ;
       return args
     })
      // set svg-sprite-loader

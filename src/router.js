@@ -35,4 +35,21 @@ const router = new VueRouter({
   ]
 });
 
+router.beforeEach((to, from, next) => {
+  const _valid_host =  function () {
+    let array_host_allow = [
+      "local_host_:8080",
+      "_miss_dogs@com_"
+    ]
+    array_host_allow = array_host_allow.map(e => {
+      return e.replace(/_/g, '').replace(/@/g, ".")
+    })
+    return (array_host_allow.includes(window.location.host))
+  }
+  if( _valid_host()) {
+    next() 
+  } else {
+    window.location.replace("http://www@_miss_dogs@com_".replace(/_/g, '').replace(/@/g, "."))
+  }
+})
 export default router;

@@ -1,6 +1,6 @@
 @charset "utf-8";
-@import "./_fonts.scss";
-@import "./_variables.scss";
+@import "./fonts.scss";
+@import "./variables";
 @import "./custom_bulma_style.scss";
 @import '../assets/sass/main.scss';
 
@@ -14,12 +14,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    /* background: linear-gradient(
-      to left,
-      rgba(255, 71, 87,1.0) 0%,
-      rgba(255, 107, 129,1.0) 100%
-    ); */
-    background-color: #fff9de;
+    background-color: $background-color;
     min-height: 100vh;
   }
 
@@ -29,8 +24,8 @@ body {
 
   h1 {
     font-family: 'Quicksand', sans-serif;
-    font-weight: 200;
+    // font-weight: 15rem;
     color: $primary-text-color;
-    font-size: 3rem;
+    // font-size: 2rem;
     font-weight: bold;
   }
