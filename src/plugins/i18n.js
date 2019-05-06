@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import vn from './vi';
-import en from './en';
+import vn from '../lang/vi';
+import en from '../lang/en';
 
 Vue.use(VueI18n)
 const messages = {

@@ -21,13 +21,19 @@ $control-radius: 0;
 $control-radius-small: 0;
 $input-border-color: None;
 $input-placeholder-color: $primary-text-color;
+$warning: $orange;
 
+$navbar-item-color : $orange;
 // 
 // $family-sans-serif: "Nunito", sans-serif;
 $family-primary: $primary-text-font;
 
 // CARD  start
-$card-color: $primary-text-color;
+// $card-color: $primary-text-color;
+
+$text: $primary-text-color;
+$card-header-weight: 2rem;
+
 // card end
 // Import only what you need from Bulma
 @import "../../node_modules/bulma/sass/utilities/_all.sass";

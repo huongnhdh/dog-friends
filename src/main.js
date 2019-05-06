@@ -6,7 +6,8 @@ import store from "./store";
 
 import './registerServiceWorker'
 import router from "./router";
-import i18n from './lang';
+import i18n from './plugins/i18n';
+import masory from './plugins/masonry';
 import './style/global.scss';
 import './icons' // icon
 
@@ -22,6 +23,7 @@ Vue.config.devtools = process.env.NODE_ENV !== `production`;
 // then had to add in ./store.js as well.
 new Vue({
   i18n,
+  masory,
   router,
   render: h => h(App),
   store

@@ -7,7 +7,7 @@
         </figure>
       </div>
       <div class="card-content">
-        <h3 class="title is-3">{{ dog_breed }}</h3>
+        <h3 class="title">{{ dog_breed }}</h3>
         <p class="subtitle">{{ dog_breed }}</p>
       </div>
       <footer class="card-footer">
@@ -73,6 +73,17 @@ export default {
 
 .card-content {
   color: $primary-text-color !important;
+  .title {
+    // $primary-text-font: 'Imprima', sans-serif;;
+    // $primary-text-color: $purple;
+    font-weight: 2rem;
+    font-family: $primary-text-font;
+    color: $primary-text-color !important;
+   }
+}
+
+.card-footer {
+   font-family: $primary-text-font;
 }
 .card:hover {
   transform: scale(1.03);

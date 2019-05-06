@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  
+
   <link rel="apple-touch-icon" sizes="57x57" href="<%= BASE_URL %>apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="<%= BASE_URL %>apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="<%= BASE_URL %>apple-icon-72x72.png">
@@ -29,6 +29,15 @@
   <!-- for fix Content Security Policy: The page's settings blocked the loading of a resource -->
   <!-- <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.missdogs.com 'font-src' https://fonts.googleapis.com" > -->
   <!-- deny iframe -->
+  <!-- for google ads -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-4210862599408884",
+      enable_page_level_ads: true
+    });
+  </script>
+  <!-- end google ads -->
   <title>Miss Dogs</title>
 </head>
 
@@ -39,7 +48,6 @@
   </noscript>
   <div id="app"></div>
   <!-- built files will be auto injected -->
-  <!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script> -->
   <script src="//code.responsivevoice.org/responsivevoice.js?key=<%= NODE_ENV==='production'? 'VjvwBt46' : 'eosxOtN4'  %>"></script>
 
 </body>
