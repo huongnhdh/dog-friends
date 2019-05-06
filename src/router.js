@@ -8,7 +8,7 @@ import Layout from "@/layout";
 
 Vue.use(VueRouter);
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   // path: '/',
   // component: Layout,
   base: publicPath,

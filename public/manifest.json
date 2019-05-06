@@ -1,5 +1,5 @@
 {
- "name": "App",
+ "name": "MissDogs.com",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
@@ -37,5 +37,8 @@
    "type": "image\/png",
    "density": "4.0"
   }
- ]
+ ],
+ "theme_color": "#fff9de",
+ "background_color": "#fff9de",
+ "display": "standalone"
 }

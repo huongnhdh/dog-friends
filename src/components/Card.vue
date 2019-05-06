@@ -11,11 +11,7 @@
         <p class="subtitle">{{ dog_breed }}</p>
       </div>
       <footer class="card-footer">
-        <a
-          href="#"
-          class="card-footer-item"
-          @click="$router.push({ name: 'breed', params: { id: dog_breed } })"
-        >Chi tiết</a>
+        <router-link :to="{ name: 'breed', params: { id: dog_breed } }"  class="card-footer-item">Chi tiết</router-link>
         <a href="#" class="card-footer-item">
           <!-- <span>
             Share on
@@ -38,19 +34,17 @@ export default {
   },
   data() {
     let dog_breed = this.dog_breed
-        .split("-")
-        .reverse()
-        .join("/");
+      .split("-")
+      .reverse()
+      .join("/");
     return {
       url: require("../assets/images/baby-dog.png"),
       api_get_breed: `https://dog.ceo/api/breed/${dog_breed}/images/random`
-
     };
   },
   methods: {
     dog_breed_get_api: function() {
-      
-      return
+      return;
     }
   },
   mounted() {
