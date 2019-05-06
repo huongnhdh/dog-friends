@@ -16,8 +16,8 @@ Vue.config.productionTip = process.env.NODE_ENV === `production`;
 // Vue.config.debug = process.env.NODE_ENV !== `production`;
 // Vue.config.devtools = process.env.NODE_ENV !== `production`;
 // Vue.config.productionTip = false;
-Vue.config.debug = true;
-Vue.config.devtools = true;
+Vue.config.debug = process.env.NODE_ENV !== `production`;
+Vue.config.devtools = process.env.NODE_ENV !== `production`;
 
 // then had to add in ./store.js as well.
 new Vue({
