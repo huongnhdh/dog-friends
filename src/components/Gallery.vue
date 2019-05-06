@@ -59,7 +59,7 @@ export default {
         this.lower_bound + this.number_img_current_loading > this.imgs.length
           ? this.imgs.length
           : this.lower_bound + this.number_img_current_loading;
-      for (let i = this.lower_bound; i < upper_bound-1; i++) {
+      for (let i = this.lower_bound; i < upper_bound; i++) {
         this.imgs_loading.push(this.imgs[i]);
       }
       this.lower_bound = upper_bound;
