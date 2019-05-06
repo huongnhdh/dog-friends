@@ -59,10 +59,10 @@ export default {
         this.lower_bound + this.number_img_current_loading > this.imgs.length
           ? this.imgs.length
           : this.lower_bound + this.number_img_current_loading;
-      for (let i = this.lower_bound; i < upper_bound; i++) {
+      for (let i = this.lower_bound; i < upper_bound-1; i++) {
         this.imgs_loading.push(this.imgs[i]);
-        this.lower_bound = i;
       }
+      this.lower_bound = upper_bound;
     },
     handleScroll() {
       let scrollHeight = window.scrollY;
