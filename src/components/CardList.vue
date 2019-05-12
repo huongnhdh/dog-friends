@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="card-list columns is-4" v-if="dog_breeds.length">
+    <div class="card-list columns" v-if="dog_breeds.length">
       <div v-for="dog_breed in dogs" :key="dog_breed">
         <Card :dog_breed="dog_breed" />
       </div>
@@ -13,18 +13,16 @@
 
 <script>
 import Card from "./Card.vue";
-
+import { mapState } from 'vuex';
 export default {
   name: `Card-List`,
   components: {
     Card
   },
-  data() {
-    return {
-      dog_breeds: []
-    };
-  },
-  computed: {
+   computed: {
+    ...mapState({
+      dog_breeds:  state => state.breed.list,
+    }),
     dogs() {
       if (this.dog_breeds.length) {
         return this.dog_breeds.filter(
@@ -34,28 +32,28 @@ export default {
               .includes(this.$store.state.searchField.toLowerCase().trim()) === true
         );
       }
-      return ``;
+      return [];
     }
   },
   created() {
-    fetch(`https://dog.ceo/api/breeds/list/all`)
-      .then(res => res.json())
-      .then(data => {
-        let dog_breeds = [];
-        const _dog_breeds = data.message;
-        Object.keys(_dog_breeds).forEach(function(key) {
-          if (_dog_breeds[key].length === 0){
-             dog_breeds.push(key)
-          }else{
-            _dog_breeds[key].forEach((k) => {
+    // fetch(`https://dog.ceo/api/breeds/list/all`)
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     let dog_breeds = [];
+    //     const _dog_breeds = data.message;
+    //     Object.keys(_dog_breeds).forEach(function(key) {
+    //       if (_dog_breeds[key].length === 0){
+    //          dog_breeds.push(key)
+    //       }else{
+    //         _dog_breeds[key].forEach((k) => {
               
-             dog_breeds.push(`${k}-${key}`)
-            })
-          }
-        });
+    //          dog_breeds.push(`${k}-${key}`)
+    //         })
+    //       }
+    //     });
        
-        this.dog_breeds = dog_breeds;
-      });
+    //     this.dog_breeds = dog_breeds;
+    //   });
   }
 };
 </script>

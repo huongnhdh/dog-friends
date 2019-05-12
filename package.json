@@ -9,6 +9,8 @@
     "deploy": "sh ./deploy.sh"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "buefy": "^0.7.5",
     "bulma": "^0.7.4",
     "register-service-worker": "^1.6.2",
     "sass-loader": "^7.1.0",
@@ -28,6 +30,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.11.0",
     "svg-sprite-loader": "^4.1.6",
+    "vue-lazyload": "^1.2.6",
     "vue-template-compiler": "^2.5.21"
   },
   "eslintConfig": {
