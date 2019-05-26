@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-image">
         <figure class="image is-4by3">
-          <img :src="url" alt="code">
+          <img v-lazy="avatar" alt="code">
         </figure>
       </div>
       <div class="card-content">
@@ -33,8 +33,8 @@ export default {
     }
   },
   data() {
-    const {code, url} = this.dog_breed
-    return {code, url};
+    const {code, avatar} = this.dog_breed
+    return {code, avatar};
   }
 };
 </script>

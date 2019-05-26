@@ -1,14 +1,15 @@
 <template>
   <div>
-    <BreedTitle :name="breed_name" :img_url="urls[0]"/>
+    <BreedTitle :name="breed_name" :img_url="breed.avatar"/>
     <breed-nav/>
-    <gallery :imgs="urls"/>
+    <gallery :imgs="breed.imgs.slice(0, 6)"/>
   </div>
 </template>
 <script>
 import BreedTitle from "../components/BreedTitle.vue";
 import BreedNav from "../components/BreedNavigation.vue";
 import Gallery from "../components/Gallery.vue"
+import { mapActions, mapState } from 'vuex';
 
 export default {
   name: "Breed",
@@ -16,24 +17,16 @@ export default {
     breed_name: String
   },
   components: { BreedTitle, BreedNav, Gallery },
-  data() {
-    let dog_breed = this.breed_name
-      .split("-")
-      .reverse()
-      .join("/");
-    return {
-      urls:[],
-      api_get_breed: `https://dog.ceo/api/breed/${dog_breed}/images`
-    };
+  computed: {
+    ...mapState('breed', {
+      breed: 'item'
+    })
   },
-  beforeMount() {
-    fetch(this.api_get_breed)
-      .then(res => res.json())
-      .then(data => {
-        this.urls = data.message;
-      }).catch(err => {
-        this.urls = [];
-      });
+  methods: {
+    ...mapActions('breed', { 'getDetailBreed': 'getDetailBreed' })
+  },
+  created(){
+    this.getDetailBreed(this.breed_name)
   }
 };
 </script>

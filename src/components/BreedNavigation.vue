@@ -43,6 +43,9 @@ export default {
   color: $primary-text-color !important;
   font-family: $primary-text-font;
   font-weight: 2rem;
+  &:hover {
+    background-color: $pink;
+  }
 }
 #navigation-main-bar{
   margin-block-end: 2%;

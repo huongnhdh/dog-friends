@@ -10,6 +10,7 @@ import router from "./router";
 // plugin
 import i18n from './plugins/i18n';
 import masory from './plugins/masonry';
+import lazy_loading from './plugins/lazy_loading';
 
 import './style/global.scss';
 import Buefy from 'buefy'
@@ -26,6 +27,7 @@ new Vue({
   store,
   i18n,
   masory,
+  lazy_loading,
   router,
   render: h => h(App),
 }).$mount(`#app`);

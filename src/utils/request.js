@@ -24,14 +24,15 @@ service.interceptors.response.use(
 
   response => {
     const res = response.data
-
-    if (res.code !== 200 || res.status !== 'success') {
-      Notification({
-        message: res.message || 'error',
-        type: "is-danger",
-        role: "alert",
-        duration: 5 * 1000
-      })
+    if (response.status !== 200) {
+      // eslint-disable-next-line no-console
+      console.log('error not 200' + response.code + ':' +  response.status + response.json  )
+      // Notification({
+      //   message: res.message || 'error',
+      //   type: "is-danger",
+      //   role: "alert",
+      //   duration: 5 * 1000
+      // })
 
       return Promise.reject(res.message || 'error')
     } else {
@@ -39,13 +40,14 @@ service.interceptors.response.use(
     }
   },
   error => {
-    // console.log('err' + error)
-    Notification({
-      message: error.message,
-      type: "is-danger",
-      role: "alert",
-      duration: 5 * 1000
-    })
+    // eslint-disable-next-line no-console
+    console.log('err' + error)
+    // Notification({
+    //   message: error.message,
+    //   type: "is-danger",
+    //   role: "alert",
+    //   duration: 5 * 1000
+    // })
     return Promise.reject(error)
   }
 )

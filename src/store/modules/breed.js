@@ -1,11 +1,11 @@
-import { getListBreedAll } from '@/api/breed'
-const default_avartar = require('../../assets/images/dog_grey.svg')
+import { getListBreedAll, getBreedGallery, fetchDetailBreed } from '@/api/breed'
+// const default_avartar = require('../../assets/images/dog_grey.svg')
 
 const state = {
   filter_key: '',
-  items: {}, // name with url  
+  items: {}, // code with url  
   item: {
-    name: '',
+    code: '',
     avatar: '',
     introduction: '',
     imgs: []
@@ -56,27 +56,13 @@ const actions = {
       })
     })
   },
-  getDetailBreed({commit, state}){
-    return new Promise((resolve, reject) => {
-      getListBreedAll(state.item.name).then(response => {
-        const { data } = response
-        if (!data) {
-          reject(`Verification failed, Server Error`)
-        }
-        let dog_breeds = {};
-        const _dog_breeds = data.message;
-        Object.keys(_dog_breeds).forEach(function(key) {
-          if (_dog_breeds[key].length === 0){
-             dog_breeds.push(key)
-          }else{
-            _dog_breeds[key].forEach((k) => {
-              
-             dog_breeds[`${k}-${key}`] = default_avartar
-            })
-          }
-        });
-        commit('SET_ITEMS', dog_breeds)
-        resolve(dog_breeds)
+  getDetailBreed: ({commit }, code) => {
+    return new Promise(async(resolve, reject) => { 
+      const breed  = await fetchDetailBreed(code)    
+      getBreedGallery(code).then(response => {
+        breed.imgs = response.message
+        commit('SET_ITEM', breed)
+        resolve(breed)
       }).catch(error => {
         reject(error)
       })

@@ -31,6 +31,7 @@
     "node-sass": "^4.11.0",
     "svg-sprite-loader": "^4.1.6",
     "vue-lazyload": "^1.2.6",
+    "vue-masonry-css": "^1.0.3",
     "vue-template-compiler": "^2.5.21"
   },
   "eslintConfig": {
