@@ -5,6 +5,7 @@
         Miss
         <svg-icon icon-class="dog"/>Dogs
       </h1>
+      <h3>Từ điển các loại chó </h3>
     </router-link>
   </div>
 </template>

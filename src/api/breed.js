@@ -1,9 +1,7 @@
 import request from '@/utils/request'
+import data from './master-data/breeds_all'
 export function getListBreedAll() {
-  return request({
-    url: 'https://dog.ceo/api/breeds/list/all ',
-    method: 'get'
-  })
+  return new Promise((resolve) => resolve(data))
 }
 
 export function getBreedAvartar(name_breed_include_sub_breed_name) {

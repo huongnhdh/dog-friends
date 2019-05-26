@@ -10,7 +10,7 @@
               type="text"
               placeholder="search dog breed..."
               v-model="params"
-              @input="updateParams(params)"
+              @input="update_filter_key(params)"
             >
           </div>
           <div class="control">
@@ -25,17 +25,26 @@
 </template>
 
 <script>
+import {mapMutations, mapState, mapActions} from 'vuex'
 export default {
   name: `Search`,
-  data() {
+  data(){
     return {
       params: ``
-    };
+    }
+  },
+  computed: {
   },
   methods: {
-    updateParams(params) {
-      this.$store.commit(`UPDATE_SEARCH_FIELD`, params);
-    }
+    // updateParams(params) {
+    //   this.$store.commit(`UPDATE_SEARCH_FIELD`, params);
+    // },
+    // ...mapMutations({
+    //   update_filter_key: 'breed/UPDATE_FILTER_KEY'
+    // })
+    ...mapActions({
+       update_filter_key: 'breed/update_filter_key'
+    })
   }
 };
 </script>
@@ -63,12 +72,12 @@ input:focus {
 }
 
 .search-icon {
-  color: $orange;
+  color: $primary-second-color;
   background-color: $white;
   border: none;
 }
 .search-box {
-  border-left: 0.3rem solid $orange;
+  border-left: 0.3rem solid $primary-second-color;
 }
 
 .field {

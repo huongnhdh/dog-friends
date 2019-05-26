@@ -17,12 +17,9 @@ const modules = modulesFiles.keys().reduce((modules, modulePath) => {
 
 const store = new Vuex.Store({
   state: {
-    searchField: ``
+    errorLog : ``
   },
   mutations: {
-    UPDATE_SEARCH_FIELD(state, params) {
-      state.searchField = params;
-    }
   },
   modules,
   getters

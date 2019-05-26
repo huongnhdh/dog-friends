@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <div class="card-list columns" v-if="dog_breeds.length">
-      <div v-for="dog_breed in dogs" :key="dog_breed">
-        <Card :dog_breed="dog_breed" />
+    <div class="card-list columns" v-if="get_dogs_by_filter_key.length">
+      <div v-for="dog_breed in get_dogs_by_filter_key" :key="dog_breed.code">
+        <Card :dog_breed="dog_breed"/>
       </div>
     </div>
     <div v-else class="error">
@@ -13,47 +13,23 @@
 
 <script>
 import Card from "./Card.vue";
-import { mapState } from 'vuex';
+import { mapState, mapGetters, mapActions } from "vuex";
 export default {
   name: `Card-List`,
   components: {
     Card
   },
-   computed: {
-    ...mapState({
-      dog_breeds:  state => state.breed.list,
-    }),
-    dogs() {
-      if (this.dog_breeds.length) {
-        return this.dog_breeds.filter(
-          dog =>
-            dog
-              .toLowerCase()
-              .includes(this.$store.state.searchField.toLowerCase().trim()) === true
-        );
-      }
-      return [];
-    }
+  computed: {
+    ...mapGetters("breed", ["get_dogs_by_filter_key"])
+  },
+  methods: {
+    ...mapActions("breed", ["getList"])
+  },
+  updated() {
+    // console.log("updated!");
   },
   created() {
-    // fetch(`https://dog.ceo/api/breeds/list/all`)
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     let dog_breeds = [];
-    //     const _dog_breeds = data.message;
-    //     Object.keys(_dog_breeds).forEach(function(key) {
-    //       if (_dog_breeds[key].length === 0){
-    //          dog_breeds.push(key)
-    //       }else{
-    //         _dog_breeds[key].forEach((k) => {
-              
-    //          dog_breeds.push(`${k}-${key}`)
-    //         })
-    //       }
-    //     });
-       
-    //     this.dog_breeds = dog_breeds;
-    //   });
+    this.getList();
   }
 };
 </script>

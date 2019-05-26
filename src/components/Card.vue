@@ -3,15 +3,15 @@
     <div class="card">
       <div class="card-image">
         <figure class="image is-4by3">
-          <img :src="url" alt="dog_breed">
+          <img :src="url" alt="code">
         </figure>
       </div>
       <div class="card-content">
-        <h3 class="title">{{ dog_breed }}</h3>
-        <p class="subtitle">{{ dog_breed }}</p>
+        <h3 class="title">{{ code }}</h3>
+        <p class="subtitle">{{ code }}</p>
       </div>
       <footer class="card-footer">
-        <router-link :to="{ name: 'breed', params: { id: dog_breed } }"  class="card-footer-item">Chi tiết</router-link>
+        <router-link :to="{ name: 'breed', params: { id: code } }"  class="card-footer-item">Chi tiết</router-link>
         <a href="#" class="card-footer-item">
           <!-- <span>
             Share on
@@ -29,30 +29,12 @@ export default {
   name: `Card`,
   props: {
     dog_breed: {
-      type: String
+      type: Object
     }
   },
   data() {
-    let dog_breed = this.dog_breed
-      .split("-")
-      .reverse()
-      .join("/");
-    return {
-      url: require("../assets/images/baby-dog.png"),
-      api_get_breed: `https://dog.ceo/api/breed/${dog_breed}/images/random`
-    };
-  },
-  methods: {
-    dog_breed_get_api: function() {
-      return;
-    }
-  },
-  mounted() {
-    fetch(this.api_get_breed)
-      .then(res => res.json())
-      .then(data => {
-        this.url = data.message;
-      });
+    const {code, url} = this.dog_breed
+    return {code, url};
   }
 };
 </script>
@@ -67,7 +49,7 @@ export default {
   display: inline-block;
   box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 280px;
-  height: 400px;
+  height: 420px;
   transition: transform 0.25s ease-out;
 }
 
