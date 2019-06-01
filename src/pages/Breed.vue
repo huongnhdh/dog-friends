@@ -1,8 +1,8 @@
 <template>
   <div>
-    <BreedTitle :name="breed_name" :img_url="breed.avatar"/>
+    <breed-title :name="breed_name" :img_url="breed.avatar"/>
     <breed-nav/>
-    <gallery :imgs="breed.imgs.slice(0, 6)"/>
+    <gallery :imgs="breed.imgs"/>
   </div>
 </template>
 <script>

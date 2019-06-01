@@ -8,7 +8,7 @@ import Layout from "@/layout";
 
 Vue.use(VueRouter);
 const router = new VueRouter({
-  // mode: 'history',
+  mode: 'history',
   // path: '/',
   // component: Layout,
   base: publicPath,
@@ -43,20 +43,22 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  const _valid_host = function () {
-    let array_host_allow = [
-      "local_host_:8080",
-      "www@_miss_dogs@com_",
-    ]
-    array_host_allow = array_host_allow.map(e => {
-      return e.replace(/_/g, '').replace(/@/g, ".")
-    })
-    return (array_host_allow.join('').includes(window.location.host))
-  }
-  if (_valid_host()) {
-    next()
-  } else {
-    window.location.replace("http://www@_miss_dogs@com_".replace(/_/g, '').replace(/@/g, "."))
-  }
+  // const _valid_host = function () {
+  //   let array_host_allow = [
+  //     "local_host_:8080",
+  //     "missdogs-6a665.firebaseapp.com",
+  //     "www@_miss_dogs@com_",
+  //   ]
+  //   array_host_allow = array_host_allow.map(e => {
+  //     return e.replace(/_/g, '').replace(/@/g, ".")
+  //   })
+  //   return (array_host_allow.join('').includes(window.location.host))
+  // }
+  // if (_valid_host()) {
+  //   next()
+  // } else {
+  //   window.location.replace("http://www@_miss_dogs@com_".replace(/_/g, '').replace(/@/g, "."))
+  // }
+  next()
 })
 export default router;

@@ -44,6 +44,7 @@
       "eslint:recommended"
     ],
     "rules": {
+      "linebreak-style": 0,
       "quotes": [
         "warn",
         "backtick"

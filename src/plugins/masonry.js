@@ -1,15 +1,6 @@
-// import Vue from 'vue'
-
-// // import ES6 style
-// import { VueMasonryPlugin } from 'vue-masonry';
-
-// Vue.use(VueMasonryPlugin)
-
-// export default VueMasonryPlugin;
-
 import Vue from 'vue'
-import VueMasonry from 'vue-masonry-css'
+import {VueMasonryPlugin} from 'vue-masonry';
 
-Vue.use(VueMasonry);
+Vue.use(VueMasonryPlugin);
 
-export default VueMasonry;
+export default VueMasonryPlugin;

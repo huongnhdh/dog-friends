@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-    <h1>
+    <h1 class="title is-3">
       {{name}}
       <svg-icon icon-class="speaker" @click="speech"/>
     </h1>

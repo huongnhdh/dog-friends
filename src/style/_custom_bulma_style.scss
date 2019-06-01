@@ -34,6 +34,8 @@ $family-primary: $primary-text-font;
 $text: $primary-text-color;
 $card-header-weight: 2rem;
 
+$title-color: $primary-text-color;
+
 // card end
 // Import only what you need from Bulma
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
