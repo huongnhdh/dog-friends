@@ -8,9 +8,12 @@ function resolve(dir) {
 process.env.RESPONSIVEVOICE_KEY = process.env.NODE_ENV === `production`? 'VjvwBt46' : 'eosxOtN4' ;
 const BASE_URL = process.env.BASE_URL || `/`
 // console.log(BASE_URL);
+
+
 module.exports = {
   publicPath: BASE_URL,
   lintOnSave: process.env.NODE_ENV !== `production`,
+  filenameHashing: process.env.NODE_ENV === `production`,
   // template: 'public/index.html',
   chainWebpack: config => {
     // clear the existing entry point
@@ -40,23 +43,12 @@ module.exports = {
   },
   runtimeCompiler: true,
   pwa: {
-    "name": `Dog breed`,
-    "short_name": ``,
-    "icons": [
-      {
-        "src": `${BASE_URL}/android-chrome-192x192.png`,
-        "sizes": `192x192`,
-        "type": `image/png`
-      },
-      {
-        "src": `${BASE_URL}/android-chrome-512x512.png`,
-        "sizes": `512x512`,
-        "type": `image/png`
-      }
-    ],
-    "theme_color": `#ffffff`,
-    "background_color": `#ffffff`,
-    "display": `standalone`
+    workboxPluginMode: 'InjectManifest',
+    workboxOptions: {
+      // swSrc is required in InjectManifest mode.
+      swSrc: resolve('src/sw.js'),
+      // ...other Workbox options...
+    }
   },
   css: {
     

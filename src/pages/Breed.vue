@@ -26,7 +26,12 @@ export default {
     ...mapActions('breed', { 'getDetailBreed': 'getDetailBreed' })
   },
   created(){
+  },
+  beforeMount(){  
     this.getDetailBreed(this.breed_name)
+    .catch(e => {
+         this.$router.push('/404')
+    })  
   }
 };
 </script>

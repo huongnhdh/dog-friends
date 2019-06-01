@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 import {
   publicPath
 } from "../vue.config";
+import PageNotFound from '@/pages/PageNotFound';
 import Layout from "@/layout";
 
 Vue.use(VueRouter);
@@ -13,32 +14,41 @@ const router = new VueRouter({
   // component: Layout,
   base: publicPath,
   routes: [{
-    path: ``,
-    name: 'layout',
-    component: Layout,
-    redirect: `/`,
-    children: [{
-      path: `/`,
-      name: `bread_list`,
-      component: () => import(`@/pages/BreedList`)
+      path: ``,
+      name: 'layout',
+      component: Layout,
+      redirect: `/`,
+      children: [
+        {
+          path: `/`,
+          name: `bread_list`,
+          component: () => import(`@/pages/BreedList`)
+        },
+        {
+          path: `/breed/:id`,
+          name: `breed`,
+          component: () => import(`@/pages/Breed`),
+          props: route => ({
+            breed_name: route.params.id
+          }),
+          //  children: [
+          //   {
+          //     path: `/gallery`,
+          //     name: `breed_dog_gallery`,
+          //     component: () => import(`@/pages/Breed/Gallery`)
+          //   }
+          // ]
+        },
+        {
+          path: '/404',
+          component: PageNotFound
+        },
+        {
+          path: '*',
+          redirect: '/404'
+        },
+      ]
     },
-    {
-      path: `/breed/:id`,
-      name: `breed`,
-      component: () => import(`@/pages/Breed`),
-      props: route => ({
-        breed_name: route.params.id
-      }),
-      //  children: [
-      //   {
-      //     path: `/gallery`,
-      //     name: `breed_dog_gallery`,
-      //     component: () => import(`@/pages/Breed/Gallery`)
-      //   }
-      // ]
-    }
-    ]
-  },
   ]
 });
 
