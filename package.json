@@ -28,7 +28,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "svg-sprite-loader": "^4.1.6",
     "vue-lazyload": "^1.2.6",
     "vue-masonry-css": "^1.0.3",
